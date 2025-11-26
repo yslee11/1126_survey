@@ -1,20 +1,20 @@
 /***** ✅ 사용자가 직접 수정해야 하는 부분 *****/
 // 깃허브 저장소 정보 입력
 const GITHUB = {
-  owner: "littledoor-ai",        // ✅ 본인 깃허브 ID
-  repo: "survey-project",         // ✅ 저장소 이름
+  owner: "yslee11",        // ✅ 본인 깃허브 ID
+  repo: "1126_survey",         // ✅ 저장소 이름
   branch: "main",                 // ✅ 브랜치 (보통 main)
   path: "images"                  // ✅ 이미지 폴더 이름
 };
 
 // Google Apps Script Web App URL 입력
 // ✅ Apps Script 코드를 수정한 후 새 배포 URL을 여기에 붙여넣으세요.
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZneOnZe0ZgqQAZ1Ix19NbQbwHybU4WNbiAd02DGIcThiBaXb4rTRPvZwqcGr7b2RS/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyx8WPaQu2tEmJVvVHMnaLUtN52Si6yLU2bIxbuovzKlcqgIXvHfq_ZnjHfkWQO81y/exec";
 
 /*****************************************************/
 
 // ===== 설정 상수 =====
-const SAMPLE_SIZE = 100;  // 한 번에 평가할 사진 개수
+const SAMPLE_SIZE = 10;  // 한 번에 평가할 사진 개수
 const SCALE_MIN = 1;
 const SCALE_MAX = 5;
 
