@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도시환경 인식 조사</title>
+  
+  <!-- Favicon 추가 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 표지 페이지 -->
+  <section id="intro-page" class="page active">
+    <h1 class="title">도시환경 인식 조사</h1>
+
+    <p class="intro-text">
+      안녕하세요. 본 설문은 <b>한양대학교 도시공학과</b>에서 
+      도시환경에 대한 <b>인식도 평가</b>를 위해 진행됩니다.
+    </p>
+
+    <div class="guide-box">
+      <h3>평가 방법</h3>
+      <ul>
+        <li>● 제시되는 사진을 보고 여러 항목에 대해 <b>1~5점으로 평가</b>합니다.</li>
+        <li>● <b>1점 = 전혀 그렇지 않다</b>, <b>5점 = 매우 그렇다</b></li>
+        <li>● 평가 항목:
+          <ul class="nested-list">
+            <li>활력: 활기차고 생동감 있는 정도</li>
+            <li>아름다움: 미적으로 아름다운 정도</li>
+            <li>안전: 교통사고 위험이 적은 정도</li>
+            <li>보행친화: 보행하기 편한 정도</li>
+            <li>연결: 다양한 목적지로 잘 연결된 정도</li>
+            <li>복잡: 시각적으로 복잡한 정도</li>
+            <li>녹지친화: 자연과 녹지가 충분한 정도</li>
+          </ul>
+        </li>
+        <li class="note">※ 추후 평가 항목이 추가될 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <div class="form-section">
+      <h3>기본 정보</h3>
+      <div class="form-group">
+        <label>성별:</label>
+        <div class="input-group">
+          <label><input type="radio" name="gender" value="남성"> 남성</label>
+          <label><input type="radio" name="gender" value="여성"> 여성</label>
+          <label><input type="radio" name="gender" value="기타"> 기타</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>연령대:</label>
+        <select name="age" id="age" required>
+          <option value="">선택해 주세요</option>
+          <option value="10대">10대</option>
+          <option value="20대">20대</option>
+          <option value="30대">30대</option>
+          <option value="40대">40대</option>
+          <option value="50대">50대</option>
+          <option value="60대 이상">60대 이상</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>직업군:</label>
+        <select name="occupation" id="occupation" required>
+          <option value="">선택해 주세요</option>
+          <option value="학생">학생</option>
+          <option value="사무직">사무직</option>
+          <option value="서비스직">서비스직</option>
+          <option value="판매직">판매직</option>
+          <option value="전문직">전문직</option>
+          <option value="기술직">기술직</option>
+          <option value="자영업">자영업</option>
+          <option value="무직">무직</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="startBtn" class="start-btn">설문 시작</button>
+  </section>
+
+  <!-- 설문 페이지 -->
+  <section id="survey-page" class="page">
+    <div class="survey-header">
+      <h2>도시환경 인식 평가</h2>
+      <p class="subtext">1 = 전혀 그렇지 않다 / 5 = 매우 그렇다</p>
+      <div id="progress" class="progress-bar">
+        <span id="progress-text">1 / 100</span>
+      </div>
+    </div>
+    
+    <div id="loading" class="loading">이미지 불러오는 중...</div>
+    <img id="survey-image" alt="도시환경 이미지" class="survey-img" />
+    
+    <form id="score-form" class="evaluation-form">
+      <div class="evaluation-items" id="evaluation-items">
+        <!-- 동적으로 생성됨 -->
+      </div>
+    </form>
+
+    <div class="buttons">
+      <button type="button" id="prevBtn" class="btn-secondary">이전</button>
+      <button type="button" id="nextBtn" class="btn-primary">다음</button>
+    </div>
+  </section>
+
+  <!-- 완료 페이지 -->
+  <section id="end-page" class="page">
+    <div class="complete-message">
+      <h2>🎉 참여해 주셔서 감사합니다!</h2>
+      <p>응답이 성공적으로 기록되었습니다.</p>
+      <p class="completion-info" id="completion-info"></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
